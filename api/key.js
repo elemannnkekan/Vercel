@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   let data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
   const now = Date.now();
-  const expiryDuration = 24 * 60 * 60 * 1000; // 24 saat
+  const expiryDuration = 60 * 1000; // 1 dakika = 60.000 ms
 
   if (data[ip] && now < data[ip].expiresAfter) {
     // Eski key geçerli
